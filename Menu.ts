@@ -1,8 +1,10 @@
 import leia = require ("readline-sync")
 import { Produto } from "./src/model/Produto";
 import { colors } from "./src/util/Colors";
+import { ProdutoController } from "./src/controller/ProdutoController";
 
 export function main(){
+        let produto: ProdutoController = new ProdutoController()
 
     let opcao, preco, estoque, id: number
     let nome: string
@@ -53,26 +55,34 @@ export function main(){
 
                 keyPress()
                 break;
+
             case 2:
                 console.log("\n\nListar todos os produtos\n\n");
-                
+                produto.listarTodas()
+
                 keyPress()
                 break;
+
             case 3:
                 console.log("\n\nBuscar produto por ID\n\n");
+                produto.procurarPorID
 
                 keyPress()
                 break;
             case 4:
                 console.log("\n\nAtualizar produto\n\n");
+                produto.atualizar
 
                 keyPress()
                 break;
+
             case 5:
                 console.log("\n\nApagar produto \n\n");
-                
+                produto.deletar
+
                 keyPress()
                 break;
+
             case 6:
                 console.log("\n\nSair \n\n");
                 
